@@ -4,7 +4,7 @@ import heroNetwork from "@/assets/hero-network.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen gradient-primary flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen gradient-primary flex items-center justify-center overflow-hidden">
       {/* Launching Soon Badge */}
       <div className="absolute top-8 right-8 z-10">
         <div className="bg-card/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-border">
@@ -19,22 +19,17 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
-            Built for Bharat. Driven by Innovation.
+            A Better Carpooling Experience
           </h1>
           
           {/* Tagline */}
           <p className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-4">
-            Reimagining Carpooling for Every Indian.
+            Smarter, Safer, and Greener.
           </p>
           
           {/* Subheading */}
           <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Join the movement to travel smarter and greener.
-          </p>
-
-          {/* Secondary Heading */}
-          <p className="text-xl md:text-2xl font-medium text-accent mb-4">
-            A Better Carpooling Experience
+            Join the movement to reduce congestion and travel smarter.
           </p>
 
           {/* Proudly Built for Bharat */}
