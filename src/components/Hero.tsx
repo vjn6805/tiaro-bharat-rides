@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen gradient-primary flex items-center justify-center overflow-hidden">
       {/* Launching Soon Badge */}
-      <div className="absolute top-8 right-8 z-10">
+      <div className="absolute top-20 right-8 z-10">
         <div className="bg-card/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-border">
           <p className="text-sm font-semibold text-foreground flex items-center gap-2">
             <span className="inline-block w-2 h-2 bg-accent rounded-full animate-pulse"></span>
@@ -27,10 +27,7 @@ const Hero = () => {
             Reimagining Carpooling for Every Indian.
           </p>
           
-          {/* Call to Action */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Join the movement to travel smarter and greener.
-          </p>
+         
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl font-medium text-accent mb-12">
@@ -60,13 +57,15 @@ const Hero = () => {
       </div>
 
       {/* Hero Image */}
-      <div className="absolute bottom-0 left-0 right-0 h-1/3 pointer-events-none opacity-30">
-        <img 
-          src={heroNetwork} 
-          alt="Connected network of carpooling vehicles" 
-          className="w-full h-full object-cover"
-        />
-      </div>
+      {/* Full Background Hero Image */}
+<div className="absolute inset-0 pointer-events-none opacity-20 z-0">
+  <img 
+    src={heroNetwork} 
+    alt="Connected network of carpooling vehicles" 
+    className="w-full h-full object-cover"
+  />
+</div>
+
 
       {/* Decorative floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

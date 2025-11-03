@@ -11,7 +11,7 @@ const Footer = () => {
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4">Tiaro</h3>
               <p className="text-muted-foreground">
-                Driving Change, One Ride at a Time
+              Empowering the Way Bharat Moves
               </p>
             </div>
 
@@ -46,19 +46,14 @@ const Footer = () => {
                   <Linkedin className="w-6 h-6" />
                 </a>
                 {/* Placeholder icons for future social media */}
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-card/50 rounded-full text-muted-foreground">
-                  <span className="text-xs">X</span>
-                </div>
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-card/50 rounded-full text-muted-foreground">
-                  <span className="text-xs">IG</span>
-                </div>
+                
               </div>
             </div>
           </div>
 
           <div className="border-t border-border pt-8 text-center">
             <p className="text-muted-foreground">
-              © 2025 Tiaro – Driving Change, One Ride at a Time.
+              © 2025 Tiaro – Empowering the Way Bharat Moves
             </p>
           </div>
         </div>

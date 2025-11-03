@@ -68,6 +68,7 @@ const Careers = () => {
             </p>
             <Button 
               size="lg"
+              onClick={() => window.open('https://forms.gle/ZaWpWMujy1baKadFA', '_blank')}
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
             >
               Apply for Internship

@@ -3,13 +3,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
-import { User } from "lucide-react";
+import veerimg from "@/assets/veerimg.jpg";
+import asshimg from "@/assets/asshimg.jpg";
+import vijayimg from "@/assets/vijayimg.jpg";
 
 const Contact = () => {
   const founders = [
-    { name: "Veer Jain", title: "Co-founder & CEO" },
-    { name: "Vijay Kant", title: "Co-founder & COO" },
-    { name: "Asshirvad", title: "Co-founder & CTO" },
+    { name: "Vijay Kant", title: "vijaykantgupta27@gmail.com", img: vijayimg },
+    { name: "Veer Jain", title: "veer47003@gmail.com", img: veerimg },
+    { name: "Aashirvad Shukla", title: "ash10pptest@gmail.com", img: asshimg },
   ];
 
   return (
@@ -29,8 +31,12 @@ const Contact = () => {
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             {founders.map((founder) => (
               <div key={founder.name} className="flex flex-col items-center">
-                <div className="w-40 h-40 rounded-full bg-card/90 backdrop-blur-sm flex items-center justify-center mb-4 shadow-lg border border-border">
-                  <User className="w-20 h-20 text-muted-foreground" />
+                <div className="w-40 h-40 rounded-full overflow-hidden bg-card/90 backdrop-blur-sm mb-4 shadow-lg border border-border">
+                  <img
+                    src={founder.img}
+                    alt={founder.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">
                   {founder.name}
@@ -48,43 +54,55 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
-            <h2 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h2>
-            <form className="space-y-6">
-              <div className="text-left">
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  placeholder="Your name"
-                  className="mt-2"
-                />
-              </div>
-              <div className="text-left">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="your.email@example.com"
-                  className="mt-2"
-                />
-              </div>
-              <div className="text-left">
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                  id="message"
-                  placeholder="Your message..."
-                  className="mt-2 min-h-[120px]"
-                />
-              </div>
-              <Button
-                type="submit"
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all w-full"
-              >
-                Send Message
-              </Button>
-            </form>
-          </div>
+          {/* Contact Form */}
+<div className="bg-card/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
+  <h2 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h2>
+
+  <form
+    className="space-y-6"
+    onSubmit={async (e) => {
+      e.preventDefault(); // prevent redirect
+      const form = e.target;
+      const formData = new FormData(form);
+
+      // Send data to Formspree
+      const response = await fetch("https://formspree.io/f/xdkprzzk", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully! We’ll get back to you soon.");
+        form.reset(); // clear all fields
+      } else {
+        alert("Something went wrong. Please try again later.");
+      }
+    }}
+  >
+    <div className="text-left">
+      <Label htmlFor="name">Name</Label>
+      <Input id="name" name="name" placeholder="Your name" className="mt-2" required />
+    </div>
+    <div className="text-left">
+      <Label htmlFor="email">Email</Label>
+      <Input id="email" name="email" type="email" placeholder="your.email@example.com" className="mt-2" required />
+    </div>
+    <div className="text-left">
+      <Label htmlFor="message">Message</Label>
+      <Textarea id="message" name="message" placeholder="Your message..." className="mt-2 min-h-[120px]" required />
+    </div>
+
+    <Button
+      type="submit"
+      size="lg"
+      className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all w-full"
+    >
+      Send Message
+    </Button>
+  </form>
+</div>
+
         </div>
       </section>
     </div>
