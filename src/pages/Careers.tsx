@@ -1,22 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Users, Rocket, Heart } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Users, Rocket, Heart } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const Careers = () => {
   return (
     <div className="min-h-screen gradient-primary">
-      {/* Navigation */}
-      <nav className="container mx-auto px-4 py-6">
-        <Link to="/">
-          <Button variant="outline" className="bg-card/90 backdrop-blur-sm border-border">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Home
-          </Button>
-        </Link>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-4 pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
             Work with Tiaro
