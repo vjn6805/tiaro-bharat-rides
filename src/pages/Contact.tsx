@@ -9,8 +9,9 @@ import vijayimg from "@/assets/vijayimg.jpg";
 
 const Contact = () => {
   const founders = [
-    { name: "Vijay Kant", title: "vijaykantgupta27@gmail.com", img: vijayimg },
     { name: "Veer Jain", title: "veer47003@gmail.com", img: veerimg },
+    { name: "Vijay Kant", title: "vijaykantgupta27@gmail.com", img: vijayimg },
+    
     { name: "Aashirvad Shukla", title: "ash10pptest@gmail.com", img: asshimg },
   ];
 
